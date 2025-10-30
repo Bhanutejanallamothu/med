@@ -1,0 +1,31 @@
+[{
+  "user_name": "ranj@eqr.ewreq",
+  "user_password": "245224642",
+  "user_type": "admin",
+  "user_phone_no": "245224642",
+  "user_email": "ranj@eqr.ewreq",
+  "list_of_visits": [],
+  "user_age": 30,
+  "user_id": 11,
+  "__v": 0
+},{
+  "user_name": "ddw@dewq.crw",
+  "user_password": "433131",
+  "user_type": "volunteer",
+  "user_phone_no": "433131",
+  "user_email": "ddw@dewq.crw",
+  "list_of_visits": [],
+  "user_age": 30,
+  "user_id": 12,
+  "__v": 0
+},{
+  "user_name": "fqwxe@cwfw.com",
+  "user_password": "341354215134",
+  "user_type": "admin",
+  "user_phone_no": "341354215134",
+  "user_email": "fqwxe@cwfw.com",
+  "list_of_visits": [],
+  "user_age": 30,
+  "user_id": 13,
+  "__v": 0
+}]

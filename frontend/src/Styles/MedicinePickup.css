@@ -1,0 +1,376 @@
+.medicine-pickup-container {
+  background-color: #f5f5f5;
+  max-width: 600px; /* Increased to accommodate horizontal cards */
+  margin: 35px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+
+
+.medicine-pickup-card{
+  margin: 0px 20px 0px; /* Reduced side margins to allow more space for horizontal cards */
+  padding: 0px 60px;
+}
+
+.medicine-pickup-title {
+  color: #333;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.medicine-pickup-success-msg {
+  background: #66bca15d;
+  color: #176101;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.medicine-pickup-error-msg {
+  background-color: #fb9ea6;
+  color: #721c24;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.medicine-pickup-form {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.medicine-pickup-form-group {
+  margin-bottom: 15px;
+}
+
+.medicine-pickup-form-group label {
+  display: block;
+  margin-bottom: 3px;
+  color: #333;
+  font-weight: bold;
+}
+
+.medicine-pickup-form-group input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.medicine-pickup-btn-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.medicine-pickup-fetch-btn,
+.medicine-pickup-submit-btn {
+  width: 100%;
+  background-color: #373737;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.medicine-pickup-fetch-btn:hover,
+.medicine-pickup-submit-btn:hover {
+  background-color: #0c0c0c;
+}
+
+.medicine-pickup-row {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.medicine-pickup-checkbox-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+  white-space: nowrap;
+}
+
+.medicine-pickup-checkbox-group label {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.medicine-pickup-checkbox-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.medicine-pickup-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.medicine-pickup-popup {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.medicine-pickup-close-popup {
+  width: 100%;
+  background-color: #373737;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.medicine-pickup-close-popup:hover {
+  background-color: #0c0c0c;
+}
+
+/* Updated styles for horizontal layout */
+.medicine-block {
+  margin-bottom: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.medicine-header {
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.medicine-delete{
+  position: absolute;
+  right: 0;
+  top: 2.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.medicine-id {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: #373737; /* Changed to match theme */
+  color: white;
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+
+.medicine-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.medicine-details p {
+  margin: 0.25rem 0;
+}
+
+/* Horizontal batches layout */
+.batches-row {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.batch-card {
+  flex: 0 0 auto;
+  width: calc(33.33% - 0.67rem);
+  min-width: 200px;
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.batch-card p {
+  margin: 0.5rem 0;
+}
+
+.batch-card input {
+  margin-top: 0.5rem;
+  padding: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.medicine-divider {
+  height: 2px;
+  background-color: #eaeaea;
+  margin: 1rem 0;
+}
+
+.medicine-pickup-subheading {
+  color: #333;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.medicine-verification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.medicine-verification-popup {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 24px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.medicine-verification-popup h2 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.verification-section {
+  margin-bottom: 24px;
+}
+
+.verification-section h3 {
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.verification-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+
+.verification-table th,
+.verification-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.verification-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+.verification-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.verification-error {
+  color: #d32f2f;
+  background-color: #ffebee;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.medicine-pickup-btn-container {
+  width: 100%;
+  margin: 16px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.medicine-pickup-fetch-btn {
+  background-color: #373737; /* Changed to match theme */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  min-width: 200px;
+  transition: background-color 0.3s;
+}
+
+.medicine-pickup-fetch-btn:hover {
+  background-color: #0c0c0c;
+}
+
+.medicine-pickup-verify-btn:hover {
+  background-color: #0c0c0c;
+}
+/* For smaller screens */
+@media (max-width: 768px) {
+  .medicine-pickup-card{
+    margin: 0;
+  }
+  
+  .batches-row {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .batch-card {
+    width: 100%;
+  }
+  
+  .medicine-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .medicine-id {
+    margin-bottom: 0.5rem;
+  }
+
+  .medicine-delete{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

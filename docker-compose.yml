@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:6
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - "${MONGO_PORT}:${MONGO_PORT}"
+    command: ["mongod", "--bind_ip_all"]
+
+  backend:
+    build: ./backend
+    restart: always
+    environment:
+      MONGO_URI: mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongo:${MONGO_PORT}/${MONGO_DATABASE}
+      PORT: ${PORT}
+      JWT_SECRET: ${JWT_SECRET}
+    depends_on:
+      - mongo
+    ports:
+      - "${PORT}:${PORT}"
+
+  frontend:
+    build: ./frontend
+    restart: always
+    environment:
+      - REACT_APP_BACKEND=${REACT_APP_BACKEND}
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+
+volumes:
+  mongo-data:

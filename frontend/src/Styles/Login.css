@@ -1,0 +1,123 @@
+.login-container {
+  background-color: #f5f5f5;  /* Changed from #fff to #f5f5f5 */
+  max-width: 400px;
+  margin: 25vh auto;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.login-title {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.login-button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.login-button-group button {
+  flex: 1;
+  background-color: #373737;  /* Changed from #33b48b to #373737 */
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button-group button:hover {
+  background-color: #0c0c0c;  /* Changed from #2a9d7a to #0c0c0c */
+}
+
+.login-admin-form input {
+  width: 94%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login-admin-form button {
+  width: 100%;
+  background-color: #373737;  /* Changed from #33b48b to #373737 */
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-admin-form button:hover {
+  background-color: #0c0c0c;  /* Changed from #2a9d7a to #0c0c0c */
+}
+
+.login-heading {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.volunteer-signup {
+  text-align: center;
+  margin-top: 20px;
+}
+.volunteer-signup button {
+  font-weight: 600;
+  color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+@media screen and (max-width: 600px) {
+  .login-container {
+    margin: 20vh auto;
+    padding: 25px;
+    width: 85%;
+  }
+
+  .login-title {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .login-button-group {
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .login-button-group button {
+    width: 100%;
+  }
+
+  .login-admin-form input {
+    width: 90%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .login-admin-form button {
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .login-heading {
+    font-size: 1.4rem;
+  }
+}

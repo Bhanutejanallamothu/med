@@ -1,0 +1,66 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #33b48b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+  z-index: 1000;
+}
+
+.main-content {
+  flex: 1;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.footer {
+  background: linear-gradient(135deg, #81ffd7 0%, #78ccfc 100%);
+  color: #003e34;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 1000;
+  line-height: 30px;
+}
+
+.dashboard {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+h1 {
+  color: #333;
+  margin-top: 40px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.back-btn{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

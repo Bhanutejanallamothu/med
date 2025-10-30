@@ -1,0 +1,211 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "user": {
+        "type": "object",
+        "properties": {
+          "user_id": { "type": "integer" },
+          "user_name": { "type": "string" },
+          "user_phone_no": { "type": "string" },
+          "user_email": { "type": "string", "format": "email" },
+          "user_age": { "type": "integer" },
+          "user_password": { "type": "string" },
+          "user_type" : { "type" : "string"},
+          "list_of_visits": { 
+            "type" : "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "timestamp": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}$"
+                }
+              }
+            }
+        }
+        },
+        "required": ["user_id", "user_name", "user_phone_no", "user_email", "user_age", "user_password" , "user_type"]
+      },
+      "patient": {
+        "type": "object",
+        "properties": {
+          "book_no": { "type": "integer" },
+          "patient_name": { "type": "string" },
+          "patient_age": { "type": "integer" },
+          "patient_sex": { "type": "string" },
+          "patient_phone_no": { "type": "string" },
+          "patient_area": {"type" : "string"}
+        },
+        "required": ["book_no", "patient_name", "patient_age", "patient_sex", "patient_phone_no" , "patient_area" ]
+      },
+      "doctor": {
+        "type": "object",
+        "properties": {
+          "doctor_id": { "type": "integer" },
+          "doctor_name": { "type": "string" },
+          "doctor_age": { "type": "integer" },
+          "doctor_sex": { "type": "string" },
+          "specialization": { "type": "string" },
+          "doctor_email": { "type": "string", "format": "email" },
+          "doctor_phone_no": { "type": "string" },
+          "doctor_availability": { "type" : "boolean" },
+          "list_of_visits": { 
+            "type" : "array" ,
+            "items": {
+              "type": "object",
+              "properties": {
+                "timestamp": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}$"
+                }
+              }
+            }
+          }
+        },
+        "required": ["doctor_id", "doctor_name", "doctor_age", "doctor_sex", "specialization", "doctor_email", "doctor_phone_no" , "doctor_availability" ]
+      },
+      "patient_history": {
+        "type": "object",
+        "properties": {
+          "book_no": { "type": "integer" },
+          "visits": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "doctor_id": { "type": "integer" },
+                "timestamp": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}$"
+                },
+                "medicines_prescribed": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "medicine_id": { "type": "string" },
+                      "quantity": { "type": "integer" },
+                      "dosage_schedule": {
+                        "type": "object",
+                        "properties": {
+                          "days": { "type": "integer" },
+                          "morning": { "type": "boolean" },
+                          "afternoon": { "type": "boolean" },
+                          "night": { "type": "boolean" }
+                        },
+                        "required": ["days", "morning", "afternoon", "night"]
+                      }
+                    },
+                    "required": ["medicine_id", "quantity", "dosage_schedule"]
+                  }
+                },
+                "medicines_given": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "medicine_id": { "type": "string" },
+                      "quantity": { "type": "integer" }
+                    },
+                    "required": ["medicine_id", "quantity", "time"]
+                  }
+                }
+              },
+              "required": ["timestamp"]
+            }
+          }
+        },
+        "required": ["book_no", "visits"]
+      },
+      "vitals": {
+        "type": "object",
+        "properties": {
+          "book_no": { "type": "integer" },
+          "rbs": { "type": "number" },
+          "bp": { "type": "string" },
+          "height": { "type": "number" },
+          "weight": { "type": "number" },
+          "pulse" : { "type": "number" },
+          "extra_note": {"type" : "string"},
+          "timestamp": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}$",
+                  "description": "Timestamp of the vitals record in YYYY-MM format"
+                }
+        },
+        "required": ["book_no", "rbs", "bp", "height", "weight", "timestamp" , "pulse"]
+      },
+      "inventory": {
+        "type": "object",
+        "properties": {
+          "medicine_id": { "type": "string" },
+          "medicine_formulation": { "type": "string" },
+          "total_quantity": { "type": "integer" },
+          "is_tablet": { "type": "boolean" },
+          "medicine_details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "medicine_name": { "type": "string" },
+              "expiry_date": { "type": "string", "format": "date" },
+              "quantity": { "type": "integer" }
+            },
+            "required": ["medicine_name", "expiry_date", "quantity"]
+          }
+         }
+        },
+        "required": ["medicine_id", "medicine_name", "medicine_expiry_date" , "total_quantity" , "is_tablet"]
+      },
+      "medicine_category": {
+        "type": "object",
+        "properties": {
+          "category_name": { "type" : "string"} ,
+          "medicine_array" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "medicine_id" : { "type" : "string" }
+              },
+              "required" : ["medicine_id", "medicine_name", "medicine_price"]
+            }
+          }
+        }
+      }
+
+    },
+    "queue": {
+      "type": "object",
+      "properties": {
+        "queue_no": { "type": "integer" },
+        "book_no": { "type": "integer" },
+        "doctor_list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "doctor_id": { "type": "integer" },
+              "doctor_name": { "type": "string" }
+            },
+            "required": ["doctor_id", "doctor_name"]
+          }
+        }
+      },
+      "required": ["queue_id", "doctor_id", "book_no"]
+    },
+    "log": {
+      "type": "object",
+      "properties": {
+        "user_id": { "type": "integer" },
+        "action": { "type": "string" },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [ "user_id", "action", "timestamp"]
+      },
+    "required": ["user", "patient", "doctor", "patient_history", "vitals", "medicine", "inventory", "queue", "log"]
+}  
