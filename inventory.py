@@ -15,7 +15,7 @@
 # # import traceback
 
 # # # MongoDB Atlas connection details
-# # CONNECTION_STRING = "mongodb+srv://s25dassteam24:EcI2NdEIA0a95sd2@team-24.km4p9.mongodb.net/?retryWrites=true&w=majority&appName=team-24"  # Replace with your connection string
+# # CONNECTION_STRING = os.environ.get("MONGO_URI", "mongodb+srv://<username>:<password>@cluster0.mongodb.net/test")  # Replace with your connection string
 # # DB_NAME = "test"
 # # COLLECTION_NAME = "inventories"
 
@@ -220,7 +220,7 @@ import traceback
 import re
 
 # MongoDB Atlas connection details
-CONNECTION_STRING = "mongodb+srv://s25dassteam24:EcI2NdEIA0a95sd2@team-24.km4p9.mongodb.net/?retryWrites=true&w=majority&appName=team-24"  # Replace with your connection string
+CONNECTION_STRING = os.environ.get("MONGO_URI", "mongodb+srv://<username>:<password>@cluster0.mongodb.net/test")  # Replace with your connection string
 DB_NAME = "test"
 COLLECTION_NAME = "inventories"
 CATEGORY_COLLECTION = "medicinecategories"
